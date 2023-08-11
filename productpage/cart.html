@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add to Cart Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Basic styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    margin: 10px;
+    display: inline-block;
+}
+
+.cart {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+    margin: 10px;
+    float: right;
+    width: 30%;
+}
+
+/* Styling for the "Add to Cart" button */
+button#add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styling for cart items */
+.cart-item {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Styling for cart total */
+#cart-total {
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="product">
+        <img src="background.jpg" alt="Product Image">
+        <h2>Product Name</h2>
+        <p class="price">$29.99</p>
+        <button id="add-to-cart">Add to Cart</button>
+    </div>
+
+    <div id="cart" class="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be added here dynamically using JavaScript -->
+        </ul>
+        <p>Total: <span id="cart-total">$0.00</span></p>
+    </div>
+
+    <script>
+        // Function to add an item to the cart
+function addToCart() {
+    const product = {
+        name: "Product Name",
+        price: 29.99,
+    };
+
+    // Create a new cart item element
+    const cartItem = document.createElement("li");
+    cartItem.className = "cart-item";
+    cartItem.innerHTML = `${product.name} - $${product.price.toFixed(2)}`;
+    
+    // Add the item to the cart
+    const cartItems = document.getElementById("cart-items");
+    cartItems.appendChild(cartItem);
+
+    // Update the cart total
+    updateCartTotal(product.price);
+}
+
+// Function to update the cart total
+function updateCartTotal(price) {
+    const cartTotalElement = document.getElementById("cart-total");
+    const cartTotal = parseFloat(cartTotalElement.innerText.replace("$", ""));
+    const newTotal = cartTotal + price;
+    cartTotalElement.innerText = "$" + newTotal.toFixed(2);
+}
+
+// Add an event listener to the "Add to Cart" button
+document.getElementById("add-to-cart").addEventListener("click", addToCart);
+
+    </script>
+</body>
+</html>

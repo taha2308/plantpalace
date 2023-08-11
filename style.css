@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  overflow: auto; 
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1170px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+.footer{
+  background-color: #24262b;
+    padding: 70px 0;
+
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+
+}
+.footer-col h4::before{
+  content: '';
+
+  left:0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,255,255,0.2);
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: -moz-hidden-unscrollable;
+            height: 1000px ;
+            
+        }
+        .background-image {
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            z-index: -1;
+            filter: blur(1px);
+            width: 100%;
+        }
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            padding: 10px 20px;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+           transition: 0.4s;
+           position: fixed;
+           width: 100%;
+           top: 0;
+           z-index: 99;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            flex: 1;
+           
+            font-family: 'Caprasimo', cursive;
+        }
+        .navbar-items {
+            display: flex;
+            align-items: center;
+        }
+        .search-button, .dropbtn {
+            background-color: transparent;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none; /* Remove underline for links */
+        }
+        .search-button:hover, .dropbtn:hover {
+            color: greenyellow; /* Change color on hover */
+        }
+        .dropdown-content {
+            display: none;
+            background: none; /* Improved background color with transparency */
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            transform: translateY(-10px);
+            position: absolute;
+            z-index: 1;
+            color: #fff;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .custom-text {
+            font-size: 2.5rem;
+            font-style: italic;
+            font-family: 'Abril Fatface', cursive;
+            color: #fff;
+            text-shadow: 0.1rem 0.1rem 0 #696969, -0.1rem -0.1rem 0 #696969;
+            font-weight: 900;
+        }
+       
+        .nav {
+            position: absolute;
+            margin-top: 75px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.0);
+            color: #fff;
+            padding: 10px 20px;
+            backdrop-filter: blur(10px);
+        }
+        .dropbtn{
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+        .btnview{
+            color: #000;
+            text-decoration: none;
+            transition: 1s;
+            background: none;
+            font-weight: 500;
+            background-color: #fff;
+            border: none;
+        }
+        .btnview:hover{
+          color: #709775;
+        }
+     
+        h1{
+            color: #000;
+        }
+        .overlayimg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.card:hover .overlay {
+    display: block;
+    opacity: 1;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.overlay:hover .text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.under {
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.under:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #000; /* Changed underline color to black */
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.under:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+@media screen and (max-height: 300px) {
+	ul {
+		margin-top: 40px;
+	}
+}
+.card-img-overlay-container {
+    position: relative;
+    overflow: hidden; /* Ensure the overlay doesn't spill over */
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Maintain aspect ratio (1:1) */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Occupy the full width of the container */
+    height: 100%; /* Occupy the full height of the container */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    opacity: 0;
+    transition: opacity 0.5s;
+    cursor: pointer;
+}
+
+.card-img-overlay-container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+}
+
+.heading-container {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #2b9348; /* Line color */
+    margin: 0 10px; /* Adjust spacing between the heading and lines */
+}
+
+.centered-heading {
+    text-align: center;
+    margin: 0; /* Reset default margin */
+}
+
+.dropbtn {
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.10em;
+  font-size: 1rem,;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.dropbtn:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff; /* Changed underline color to black */
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.dropbtn:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  
+  .navbar {
+    padding: 5px 10px; /* Adjust padding for smaller screens */
+  }
+  
+  .navbar-brand {
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+  }
+  
+  .navbar-items {
+    flex-direction: column; /* Stack items vertically for smaller screens */
+  }
+  
+  .dropbtn {
+    font-size: 1rem; /* Reduce font size for smaller screens */
+  }
+  
+  /* ... (other responsive styles) ... */
+}
+
+/* Responsive styles for screens up to 574px */
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem; /* Further reduce font size for smaller screens */
+  }
+  
+  /* ... (other responsive styles) ... */
+}
+
+/* Additional responsive styles as needed */
+@media (max-width: 768px) {
+  .container-fluid {
+      padding: 20px;
+  }
+
+  .col-6 {
+      width: 100%;
+  }
+  
+  /* Add other adjustments as needed */
+}
+
+/* Adjustments for screens up to 576px */
+@media (max-width: 576px) {
+  .navbar-brand {
+      font-size: 150%;
+  }
+  
+  .container-fluid {
+      padding: 10px;
+  }
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .container3:hover .image {
+    opacity: 0.3;
+  }
+  
+  .container3:hover .middle {
+    opacity: 1;
+  }
+  
+  .text {
+  
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+  /* Add other adjustments as needed */
+}
+/* Remember, this is just a basic example, and you'll need to adjust styles and layout properties based on your design and content. Responsive design is an iterative process, so test your adjustments thoroughly across different devices and screen sizes to ensure everything looks and works as intended. */
+
+
+
+
+

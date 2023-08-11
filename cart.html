@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <title>Shopping Cart</title>
+  <style>
+    /* Custom styles */
+    .footpara {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+      background-color: #2b9348;
+    }
+
+    .footpara b {
+      color: #000;
+      font-size: 1.3rem;
+    }
+
+    .footpara button {
+      margin-top: 10px;
+    }
+
+    /* Adjust footer layout */
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <section class="pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="display-5 mb-2 text-center">Shopping Cart</h3>
+          <p class="mb-5 text-center">
+            <i class="text-info font-weight-bold">3</i> items in your cart
+          </p>
+          <table id="shoppingCart" class="table table-condensed table-responsive">
+            <thead>
+              <tr>
+                <th style="width: 50%">Product</th>
+                <th style="width: 15%">Price</th>
+                <th style="width: 15%">Quantity</th>
+                <th style="width: 20%"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-th="Product">
+                  <div class="row">
+                    <div class="col-md-3 text-center">
+                      <img src="https://via.placeholder.com/250x250/5fa9f8/ffffff" alt="Product Image" class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-md-9 text-left mt-sm-2">
+                      <h4>Product Name</h4>
+                      
+                    </div>
+                  </div>
+                </td>
+                <td data-th="Price">$49.00</td>
+                <td data-th="Quantity">
+                  <input type="number" class="form-control form-control-lg text-center" value="1">
+                </td>
+                <td class="actions" data-th="">
+                  <div class="text-right">
+                    <button class="btn btn-outline-danger btn-md mb-2">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td data-th="Product">
+                  <div class="row">
+                    <div class="col-md-3 text-center">
+                      <img src="https://via.placeholder.com/250x250/5fa9f8/ffffff" alt="Product Image" class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-md-9 text-left mt-sm-2">
+                      <h4>Product Name</h4>
+                      
+                    </div>
+                  </div>
+                </td>
+                <td data-th="Price">$49.00</td>
+                <td data-th="Quantity">
+                  <input type="number" class="form-control form-control-lg text-center" value="1">
+                </td>
+                <td class="actions" data-th="">
+                  <div class="text-right">
+                    <button class="btn btn-outline-danger btn-md mb-2">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footpara" style="display: inline-flex;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <b>Subtotal</b>
+        </div>
+        <div class="col-md-6 text-end">
+          <span>$1666</span>
+          <button class="btn btn-primary">Check out</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-9z/rO1R0pDwjfHen9z3VGss3sxePe/Jz6nj/J1CfrHQ8M8cv+U8ffIbbVYUew+Or" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy4Ck4pFpZ8fRz5VSc5EIV0DaSs8FfM+Yl" crossorigin="anonymous"></script>
+</body>
+</html>

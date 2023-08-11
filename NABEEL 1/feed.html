@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <video autoplay muted loop id="video-background">
+        <source src="logvid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="row">
+            <div class="col w-100">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0.2); color: #fff;">
+                    <h1 class="text-center" style="font-weight: 900;">Feedback Form</h1>
+                
+                    <legend>Personal Info</legend>
+                   
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" id="name" class="form-control" name="name" required placeholder="Enter Your Name..."><br>
+
+                        <div class="row">
+                            <div class="col">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" class="form-control" name="email" required placeholder="Enter Your Email..."><br>
+                            </div>
+                            <div class="col">
+                                <label for="Phone" class="form-label">Phone No:</label>
+                                <input type="text" class="form-control" required placeholder="Enter Your Phone No..."><br>
+                            </div>
+                        </div>
+
+                        <label for="feedback" class="form-label">Feedback:</label>
+                        <textarea id="feedback" name="feedback" class="form-control" required placeholder="Enter Your Feedback..."></textarea><br>
+
+                        <a type="submit" class="btn text-center text-white" href="thankyou.html">Submit Feedback</a>
+                  
+                </div>       
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

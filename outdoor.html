@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Lora:wght@700&display=swap" rel="stylesheet">
+
+    <title></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+       /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.5;
+    overflow: auto;
+}
+
+/* Navbar styles */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    position: fixed;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Caprasimo', cursive;
+    color: greenyellow;
+}
+
+.navbar-items {
+    display: flex;
+    align-items: center;
+}
+
+.search-button, .dropbtn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-button:hover, .dropbtn:hover {
+    color: greenyellow;
+}
+
+.dropdown-content {
+    display: none;
+    background: none;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(-10px);
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom text styles */
+.custom-text {
+    font-size: 2.5rem;
+    font-style: italic;
+    font-family: 'Abril Fatface', cursive;
+    color: #fff;
+    text-shadow: 0.1rem 0.1rem 0 #696969, -0.1rem -0.1rem 0 #696969;
+    font-weight: 900;
+}
+
+/* Container styles */
+.container-fluid {
+    padding: 20px;
+}
+
+/* Column styles */
+.col-6 {
+    width: 100%;
+}
+
+/* Card styles */
+.card {
+    height: 380px;
+    margin: 50px;
+   
+    overflow: hidden;
+    position: relative;
+ 
+
+}
+
+.description {
+    height: 60px;
+    width: 250px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 10px;
+    color: #FFF;
+    transition: 0.5s;
+}
+
+.card:hover {
+    cursor: pointer;
+    
+}
+
+.card:hover .description {
+    height: 200px;
+    bottom: -4px;
+    background: black;
+  
+}
+
+
+.card:hover p {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+.dropbtn {
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.10em;
+  font-size: 1rem,;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.dropbtn:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff; /* Changed underline color to black */
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.dropbtn:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+.heading-container {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #2b9348; /* Line color */
+    margin: 0 10px; /* Adjust spacing between the heading and lines */
+}
+
+.centered-heading {
+    text-align: center;
+    margin: 0; /* Reset default margin */
+}
+.img12{
+  filter: blur(0px);
+}
+.img12:hover{
+  filter: blur(5px);
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-search">
+            <button href="#" class="search-button" id="searchInput"><i class="bi bi-search" id="search"></i></button>
+        </div>
+        <div class="navbar-brand" style="font-size: 190%; color: greenyellow;">Plant<span style="color: #fff;" id="palace">Palace<i class="bi bi-flower1 ms-2" style="color: greenyellow;"></i></span></div>
+        <div class="navbar-items">
+            <a href="cart.html" class="search-button"><i class="bi bi-cart" id="loginbtn"></i></a>
+        </div>
+    </nav>
+  
+    
+    <nav style="display: flex; justify-content:center; z-index: 1;margin-top: 65px;" class="navbar" id="navbar2">
+        <div class="dropdown text-center">
+            <a class="dropbtn" id="plant">About Us</a>
+            <div class="dropdown-content text-center dropdown-menu" style=" background-color: rgba(0, 0, 0, 0.1);">
+            
+            </div>
+        </div>
+        <div class="dropdown text-center ms-4">
+            <a class="dropbtn" id="flower">Contact Us</a>
+        </div>
+        <div class="dropdown text-center ms-4">
+            <a class="dropbtn" id="gift">Login</a>
+        </div>
+    </nav>
+    
+    <div class="container-fluid" data-aos="fade-down" data-aos-duration="1000" style="margin-top:180px;">
+        <div class="row" style="height: 350px;">
+            <div class="col-lg-6" style="background-color: #000; color: greenyellow;">
+                <h1 style="margin-top: 0px; font-weight: 900;" class="ms-1 text-success">Outdoor Plants</h1>
+                <p class="ms-5" style="color: #fff;">
+                  Office plants are more than just decorative elements; they breathe life into the workspace, creating a refreshing and vibrant environment. These green companions bring a touch of nature indoors, helping to improve air quality and promote a sense of well-being among employees. The presence of office plants not only enhances the aesthetics of the workspace but also has positive effects on productivity, focus, and creativity. From the graceful fronds of ferns to the elegant simplicity of succulents, each plant brings its unique character and benefits to the office setting. The act of caring for these plants fosters a sense of responsibility and connection with the natural world, fostering a more pleasant and balanced work atmosphere. As they quietly thrive on desks, shelves, and corners, office plants symbolize growth, resilience, and the potential for productivity to flourish, reminding us to strike a harmonious balance between work and the natural world that sustains us.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.immediate.co.uk/production/volatile/sites/10/2018/02/7b9cbbd7-8f21-4b94-8c30-98c99316022c-a456fa0.jpg?quality=90&webp=true&fit=975,649" alt="" style="width: 100%; height: 550px;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="heading-container" style="margin-top: 250px;;">
+      <div class="line"></div>
+      <h1 class="text-center text-white centered-heading" style="font-weight: 900;">Outdoor Plants</h1>
+      <div class="line"></div>
+  </div>
+
+      <div class="container" style="margin-top: 50px;">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="Mon.jpg" alt="" class="img12">
+              <div class="description">
+                <h1>Rana</h1>
+                <p> Lorem ipsum, consectetur adipisicing elit. Ex hic corporis animi harum? Nisi quis ipsum laborum a animi perspiciatis assumenda quae deserunt porro, soluta voluptatum molestiae. Eveniet, aliquam! Mollitia? </p>
+              </div>
+              </div>  
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="Mon.jpg" alt="" class="img12">
+              <div class="description">
+                <h1>Rana</h1>
+                <p> Lorem ipsum, consectetur adipisicing elit. Ex hic corporis animi harum? Nisi quis ipsum laborum a animi perspiciatis assumenda quae deserunt porro, soluta voluptatum molestiae. Eveniet, aliquam! Mollitia? </p>
+              </div>
+              </div>  
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <img src="Mon.jpg" alt="" class="img12">
+              <div class="description">
+                <h1>Rana</h1>
+                <p> Lorem ipsum, consectetur adipisicing elit. Ex hic corporis animi harum? Nisi quis ipsum laborum a animi perspiciatis assumenda quae deserunt porro, soluta voluptatum molestiae. Eveniet, aliquam! Mollitia? </p>
+              </div>
+              </div>  
+          </div>
+          
+            
+            
+        
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script> 
+      window.onscroll = function() {
+        scrollFunction();
+      };
+    
+      function scrollFunction() {
+        const navbar = document.getElementById("navbar");
+        const navbar2 = document.getElementById("navbar2");
+        const dropdownItems = document.querySelectorAll(".navbar#navbar2 .dropdown-item");
+        const palaceText = document.getElementById("palace");
+        const SearchText = document.getElementById("search");
+        const LoginText = document.getElementById("loginbtn");
+        const plant = document.getElementById("plant");
+        const flower = document.getElementById("flower");
+        const gift = document.getElementById("gift");
+        
+    
+        if (
+          document.body.scrollTop > 80 ||
+          document.documentElement.scrollTop > 80
+        ) {
+          navbar.style.padding = "10px 10px";
+          navbar.style.backgroundColor = "#000";
+          navbar2.style.backgroundColor = "#000";
+          navbar2.style.color = "white";
+          palaceText.style.color = "white"; // Change color to black
+          SearchText.style.color = "white"; // Change color to black
+          LoginText.style.color = "white"; // Change color to black
+          plant.style.color = "white"; // Change color to black
+          gift.style.color = "white"; // Change color to black
+          flower.style.color = "white"; // Change color to black
+    
+          // Change color of dropdown items in navbar2
+          for (const item of dropdownItems) {
+            item.style.color = "black";
+          }
+        } else {
+          navbar.style.padding = "";
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.0)";
+          navbar2.style.backgroundColor = "rgba(0, 0, 0, 0.0)";
+          navbar2.style.color = "black";
+          palaceText.style.color = "#fff"; // Change color back to greenyellow
+          SearchText.style.color = "greenyellow"; // Change color back to greenyellow
+          LoginText.style.color = "greenyellow"; // Change color back to greenyellow
+          plant.style.color = "greenyellow"; // Change color back to greenyellow
+          flower.style.color = "greenyellow"; // Change color back to greenyellow
+          gift.style.color = "greenyellow"; // Change color back to greenyellow
+    
+          // Change color of dropdown items in navbar2
+          for (const item of dropdownItems) {
+            item.style.color = "#fff";
+          }
+        }
+      }</script>
+  
+</body>
+</html>

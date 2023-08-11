@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body{
+    background-color: #000;
+    color: greenyellow;
+  }
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 38, 15, 0.2);
+    margin: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px; /* Adjust max-width as needed */
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%; /* Allow the height to adjust based on the aspect ratio */
+    max-height: 200px; /* Set a maximum height */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  .title {
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  .btn {
+    border: none;
+    outline: 0;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .heading-container {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #2b9348; /* Line color */
+    margin: 0 10px; /* Adjust spacing between the heading and lines */
+}
+
+.centered-heading {
+    text-align: center;
+    margin: 0; /* Reset default margin */
+}
+ 
+</style>
+</head>
+<body>
+  <div class="heading-container">
+    <div class="line"></div>
+    <h1 class="text-center centered-heading" style="font-weight: 900; color: #fff;">About Us</h1>
+    <div class="line"></div>
+</div>
+<div class="container-fluid">
+  <div class="row card-container">
+    <div class="card-row" id="cardRow">
+      <!-- Cards will be dynamically generated here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // JSON data
+  const cardData = [
+    {
+      image: "images/Corol.jpg",
+      name: "Black Coral Elephant",
+      description: "The 'Black Coral Elephant' plant is an intriguing and distinctive type of succulent. With its thick, dark leaves that resemble the color of black coral, this plant adds a touch of elegance and uniqueness to any garden or indoor space. Its striking appearance and easy-care nature make it a popular choice among plant enthusiasts. Just like its namesake, the Black Coral Elephant plant stands out with its remarkable dark foliage, making it a captivating addition to your green collection."
+    },
+    {
+      image: "images/purple heart.jpg",
+      name: "Purple Heart",
+      description: "Purple Heart scientifically known as Tradescantia pallida, is a captivating trailing succulent renowned for its stunning purple foliage. This plant is favored by both beginners and experienced gardeners for its low-maintenance nature and vibrant appearance. Whether placed in gardens or indoors, its distinctive purple leaves add a touch of elegance and allure to any space, making it a cherished addition to plant collections worldwide."
+    },
+    {
+      image: "images/Black Dahlia.jpg",
+      name: "Black Dahlia",
+      description: "The Black Dahlia, or Dahlia 'Black Beauty,' is a remarkable flowering plant that captivates with its dark and velvety maroon to almost black blossoms. This unique and alluring dahlia variety adds a touch of mystery and drama to gardens and floral arrangements alike. Its rich, deep hue and intricate petal structure create a striking contrast against its green foliage. The Black Dahlia is a popular choice for those seeking to infuse their landscapes with a sense of elegance and enigmatic beauty."
+    },
+    {
+      image: "images/came.jpg",
+      name: "middlemist camellia",
+      description: "The Middlemist Camellia, Camellia japonica 'Middlemist's Red,' is a rare and exquisite flowering shrub originating from China. Known for its vibrant deep pink to red blooms and glossy evergreen leaves, this camellia variety adds elegance and charm to gardens. Its unique ability to bloom in winter makes it a standout and cherished addition for enthusiasts who appreciate its captivating beauty even in colder months."
+    },
+    {
+      image: "images/corpso.jpg",
+      name: "Copso  Flower",
+      description: "The corpse flower (Amorphophallus titanum) is a rare and remarkable flowering plant known for its massive size and distinctive odor resembling that of a decaying animal, which gives it its name. Native to Sumatra, Indonesia, this unique plant blooms infrequently, sometimes taking years to do so. Its large, burgundy-hued spathe surrounds a tall spadix and can reach heights of up to 10 feet or more. Despite its unusual smell, the corpse flower attracts attention from enthusiasts and curious onlookers due to its extraordinary appearance and infrequent blooming events."
+    },
+    {
+      image: "images/ghoost.jpg",
+      name: "ghost orchid",
+      description: "The ghost orchid (Dendrophylax lindenii) is a rare and ethereal orchid species found in the swamps and humid forests of Florida and Cuba. Its name comes from its delicate and almost translucent appearance, which gives it an otherworldly quality. The ghost orchid is known for its unique blooming habits, with a single flower emerging from its long stem. Due to its elusive nature and specific habitat requirements, spotting a ghost orchid in the wild is a special and sought-after experience among orchid enthusiasts and nature lovers."
+    },
+    {
+      image: "images/rose.jpg",
+      name: "Juliet Rose",
+      description: "The Juliet Rose is a captivating and exquisite rose variety known for its romantic and elegant appearance. Its distinct peachy-apricot color, intricate layers of petals, and delightful fragrance make it a favorite choice for weddings and special occasions. This English shrub rose, developed by David Austin, combines the charm of old-fashioned roses with modern repeat blooming characteristics. The Juliet Rose's timeless beauty and soft coloring evoke a sense of romance and grace, making it a beloved symbol of love and affection."
+    },
+    {
+      image: "images/forest.jpg",
+      name: "Black Forest Petunia",
+      description: "The Black Forest Petunia is a unique and striking flowering plant known for its deep, velvety, almost black petals. Contrasting with traditional bright-colored petunias, this variety adds a touch of mystery and elegance to gardens and containers. The dark blooms of the Black Forest Petunia create a dramatic and captivating visual effect, making it a favorite among gardeners looking for a bold statement in their floral displays. This distinctive petunia brings a touch of sophistication and intrigue to any outdoor or indoor space."
+    },
+    {
+      image: "images/monstera.jpg",
+      name: "Monstera Deliciosa",
+      description: "Monstera Deliciosa, often referred to as the Swiss Cheese Plant, is a popular tropical houseplant known for its iconic and unique foliage. The plant's large, glossy green leaves are characterized by their distinctive splits and holes, resembling Swiss cheese. This plant has become a beloved choice for interior decor due to its striking appearance and ability to thrive indoors. Its adaptability and low-maintenance nature make it a great option for both beginners and experienced plant enthusiasts. The Monstera Deliciosa adds a touch of tropical charm and a sense of the exotic to any living space."
+    },
+    // Add more card objects as needed
+  ];
+
+  const cardRow = document.getElementById("cardRow");
+
+  // Loop through the cardData and generate cards
+  cardData.forEach(card => {
+    const cardElement = document.createElement("div");
+    cardElement.className = "col-md-3 card";
+    
+    const cardImage = document.createElement("img");
+    cardImage.src = card.image;
+    cardImage.alt = card.name;
+    
+    const cardTitle = document.createElement("h2");
+    cardTitle.textContent = card.name;
+    
+    const cardDescription = document.createElement("p");
+    cardDescription.className = "title";
+    cardDescription.textContent = card.description;
+    
+    cardElement.appendChild(cardImage);
+    cardElement.appendChild(cardTitle);
+    cardElement.appendChild(cardDescription);
+    
+    cardRow.appendChild(cardElement);
+  });
+</script>
+
+</body>
+</html>
